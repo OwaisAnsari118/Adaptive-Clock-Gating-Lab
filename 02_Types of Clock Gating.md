@@ -38,3 +38,16 @@
 - **Example**:
   - CPU core clock gating aggressiveness changes depending on battery level and thermal state.
   - If workload is bursty, use fine-grained gating; if idle for long, use coarse-grained gating.
+
+# Difference of Static, Dynamic and Adaptive Clock Gating.
+| Feature         | Static Clock Gating           | Dynamic Clock Gating        | Adaptive Clock Gating                           |
+|-----------------|-------------------------------|-----------------------------|-------------------------------------------------|
+| Decision Timing | Design-time (fixed)           | Runtime (activity-based)    | Runtime + predictive based                      |
+| Flexibility	    | Low	                          | Medium	                    | High                                            |
+| Complexity	    | Low	                          | Medium	                    | High                                            |
+| Area Overhead	  | Low	                          | Medium	                    | Higher                                          |
+| Power Saving	  | Medium (depends on design)    | High for variable workloads | Highest (optimized for changing workload)       |
+| Example	        | Disable unused IP permanently	| Stop ALU when idle	        | Switch gating level based on workload + thermal |
+
+
+
